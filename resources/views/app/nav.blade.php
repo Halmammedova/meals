@@ -9,6 +9,9 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{ route('recipes.index') }}"><span class="h5 ms-5">Recipes</span></a>
           </li>
+          <li class="nav-item">
+                <a class="nav-link" href="{{ route('abouts.index') }}"><span class="h5 ms-5">ABOUT US</span></a>
+            </li>
         </ul>
         
       </div>
