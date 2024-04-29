@@ -1,4 +1,4 @@
-<div>
+<div class="position-fixed">
     <form action="{{ url()->current() }}" method="get">
 
         <div class="mb-3">
