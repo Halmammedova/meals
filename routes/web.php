@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RecipeController;
 use Illuminate\Support\Facades\Route;
@@ -13,3 +14,5 @@ Route::controller(RecipeController::class)
         Route::get('', 'index')->name('index');
         Route::get('/{id}', 'show')->name('show')->where('id', '[0-9]+');
     });
+
+Route::resource('/abouts', AboutController::class);
