@@ -7,7 +7,7 @@
             @if($obj->image)
 
             @else
-                <img src="{{ asset('img/meal-' . $obj->category_name_id . '.jpg') }}" alt="" class="img-fluid rounded-3">
+                <img src="{{ asset('img/meal-' . $obj->category_name_id . '.jpg') }}" alt="" class="img-fluid h-100 rounded-3">
             @endif
         </div>
         <div class="col-4 px-4">
