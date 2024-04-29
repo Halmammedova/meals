@@ -3,9 +3,9 @@
     All Recipes
 @endsection
 @section('content')
-    <div class="container py-4">
-       <div class="row g-4">
-           <div class="col-md-4 col-xl-3">
+    <div class="container-xxl py-4">
+       <div class="row g-2">
+           <div class="col-md-4 col-xxl-4">
                 @include('app.filter')
            </div>
            <div class="col">
