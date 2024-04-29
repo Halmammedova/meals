@@ -3,9 +3,9 @@
     Home
 @endsection
 @section('content')
-    <div class="container py-4">
-        <div>
-            <div class="h3 text-success text-center  mb-4">
+    <div class="container py-5">
+        <div class="py-5">
+            <div class="h1 text-success text-center mb-5">
                 Type of meals
             </div>
             <div class="row g-4">

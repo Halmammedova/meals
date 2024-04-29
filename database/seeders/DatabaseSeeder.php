@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Level;
+use App\Models\Duration;
 use App\Models\Recipe;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -22,11 +22,11 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             CategoryNameSeeder::class,
-            DurationSeeder::class,
+            LevelSeeder::class,
         ]);
 
-        Level::factory()
-            ->count(4)
+        Duration::factory()
+            ->count(136)
             ->create();
 
         Recipe::factory()

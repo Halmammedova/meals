@@ -50,18 +50,6 @@
             </select>
         </div>
 
-        <div class="mb-3">
-            <label for="durations" class="form-label fw-semibold">Prep time in minutes</label>
-            <select class="form-select" id="durations" name="durations[]" multiple size="3">
-                @foreach($durations as $duration)
-                    <option value="{{ $duration->id }}" {{ in_array($duration->id, $f_durations) ? 'selected':'' }}>
-                        {{ $duration->name }}
-                        <span>min</span>
-                    </option>
-                @endforeach
-            </select>
-        </div>
-
         <div class="row g-2 mb-3">
             <div class="col">
                 <label for="minKcal" class="form-label fw-semibold">Min Kcal</label>
