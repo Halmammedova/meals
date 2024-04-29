@@ -14,7 +14,6 @@ class RecipeController extends Controller
     public function index(Request $request)
     {
         $request->validate([
-            'q' => 'nullable|string|max:30',
             'user' => 'nullable|integer|min:1',
             'category' => 'nullable|integer|min:1',
             'categoryName' => 'nullable|integer|min:1',
@@ -26,7 +25,6 @@ class RecipeController extends Controller
             'maxKcal' => 'nullable|numeric|min:0',
             'sortBy' => 'nullable|in:newToOld,lowToHigh,highToLow',
         ]);
-        $f_q = $request->has('q') ? $request->q : null;
         $f_user = $request->has('user') ? $request->user : null;
         $f_category = $request->has('category') ? $request->category : null;
         $f_categoryName = $request->has('categoryName') ? $request->categoryName : null;
@@ -36,13 +34,7 @@ class RecipeController extends Controller
         $f_maxKcal = $request->has('maxKcal') ? $request->maxKcal : null;
         $f_sortBy = $request->has('sortBy') ? $request->sortBy : null;
 
-        $objs = Recipe::when(isset($f_q), function ($query) use ($f_q) {
-            return $query->where(function ($query) use ($f_q) {
-                $query->where('title', 'like', '%' . $f_q . '%')
-                    ->orWhere('body', 'like', '%' . $f_q . '%');
-            });
-        })
-            ->when(isset($f_user), function ($query) use ($f_user) {
+        $objs = Recipe::when(isset($f_user), function ($query) use ($f_user) {
                 return $query->where('user_id', $f_user);
             })
             ->when(isset($f_category), function ($query) use ($f_category) {
@@ -99,7 +91,6 @@ class RecipeController extends Controller
                 'categories' => $categories,
                 'levels' => $levels,
                 'durations' => $durations,
-                'f_q' => $f_q,
                 'f_user' => $f_user,
                 'f_category' => $f_category,
                 'f_categoryName' => $f_categoryName,
